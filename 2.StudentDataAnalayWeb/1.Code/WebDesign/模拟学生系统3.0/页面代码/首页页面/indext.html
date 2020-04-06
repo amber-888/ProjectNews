@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    (function agent() {
+    let isUnlockingCached = false
+    const isUnlocking = () => isUnlockingCached
+    document.addEventListener('allow_copy', event => {
+      const { unlock } = event.detail
+      isUnlockingCached = unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = e => {
+      if (isUnlocking()) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach(evt => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()
+
+</script>
+<head>
+    <meta charset="UTF-8">
+	<style>
+		.white{
+			text-decoration: none;
+			color: #fff;
+
+	}
+	.white1{
+			text-decoration: none;
+			color: #aab1b7;
+
+	}
+
+
+	</style>
+
+    <title>sevengroup</title>
+</head>
+<body style="width: 1261px; margin: 0px auto; background-image: url(&quot;http://wx3.sinaimg.cn/large/ebc2bc14gy1fiq3h19z7vj21hc0rsabf.jpg&quot;); background-attachment: fixed; background-color: rgb(246, 244, 236);float:left;">
+
+
+	<meta charset="utf-8">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title></title>
+
+	</div>
+	<div style="width:  1261px;height: 100px;background-color: #000000;margin: 0px auto;">
+		<div style="width:  1261px;height: 100px;background-color:#000000 ;margin: 0px auto;">
+			<img src="222.png" width="500" height="60" style="float: left;padding-top: 24.5px;padding-left: -240.5px;">
+			<table style="float: right;font-size: 15px;color:#aab1b7 ;height: 100px; ">
+				<tbody><tr style="text-align: center;">
+					<td id="home" style="width: 100px;">首页</td>
+					<td id="brand" style="width: 100px;"><a href="../信息模拟区/information.html" class="white1">信息录入栏</a></td>
+					<td id="product" style="width: 100px;"><a href="../结果区/result.html" class="white1">结果展示栏</a></td>
+					<td id="shops" style="width: 100px;"><a href="../历史区/history.html" class="white1">历史记录栏</a></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>
+	<div style="width: 1261x;height: 380px; background-color: grey;">
+		<img src="v3.jpg" width="1261px">
+
+	</div>
+
+	<div style="height:1550px;width:1200px;background:rgba(17,0,0,0.5);">
+		<div style="text-align: center;height:250px;width: 1200px;">
+			<img src="a4.png" style="padding-top:60px ;padding-bottom:40px;">
+		</div>
+
+		<div style="height: 300px;width: 1200px;margin-top: 0px;margin-right: auto;margin-bottom: 0px;margin-left: auto;">
+		<table style="text-align: center;">
+			<tbody><tr>
+				<td style="width: 310px;text-align: center;"><img src="图表-柱状图.png">
+				<div style="margin-top:20px;color: #808080;text-align: center;">
+					<h1 style="font-size: 24px;"><a href="../信息模拟区/information.html" class="white">信息模拟区 </a></h1>
+				</div>
+				</td>
+				<td style="width: 310px;text-align: center;"><img src="数据看板.png">
+				<div style="margin-top:20px;color: #808080;text-align: center;">
+					<h1 style="font-size: 24px;"><a href="../结果区/result.html" class="white">结果区</a></h1>
+				</div>
+				</td>
+				<td style="width: 310px;text-align: center;"><img src="icon_预览.png">
+				<div style="margin-top:20px;color: #808080;text-align: center;">
+					<h1 style="font-size: 24px;"><a href="../结果区/result.html" class="white">数据区</a></h1>
+				</div>
+				</td>
+				<td style="width: 310px;text-align: center;"><img src="icon_任务进程.png">
+				<div style="margin-top:20px;color: #808080;text-align: center;">
+					<h1 style="font-size: 24px;"><a href="../历史区/history.html" class="white">历史记录区</a></h1>
+				</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+
+
+		<div style="height: 1190px;width: 980px;margin: 0 auto">
+			<div style="margin-bottom:10px;height: 470px;">
+				<div style="float: left;margin-right: 10px">
+
+					<div style="width: 230px;height: 230px;">
+
+					</div>
+				</div>
+				<div style="float: left;">
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+
+	</script>
+
+<script type="text/javascript"></script></body>
+
+</html>

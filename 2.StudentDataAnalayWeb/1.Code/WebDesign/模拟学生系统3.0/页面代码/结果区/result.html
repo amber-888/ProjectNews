@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    (function agent() {
+    let isUnlockingCached = false
+    const isUnlocking = () => isUnlockingCached
+    document.addEventListener('allow_copy', event => {
+      const { unlock } = event.detail
+      isUnlockingCached = unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = e => {
+      if (isUnlocking()) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach(evt => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()
+
+</script>
+<title>左侧框</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		background: #ddd;
+	}
+	ul{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	.nav{
+		background: #fff;
+		width: 100%;
+		height: 100px;
+		font-size: 20px;
+		line-height: 100px;
+		text-align: center;
+		border-bottom: 1px solid #f60;
+	}
+	.box{
+		margin: 0 auto;
+		width: 980px;
+		height:980px;
+	}
+	.fl_l{
+		width: 180px;
+		left: -20px;
+		border: 1px solid #f4f4f4;
+		position:absolute;
+		background: #fff;
+	}
+	.fl_l li a{
+		border-bottom: 1px solid #eee;
+		text-align: center;
+		display: block;
+		color: #333;
+		font-size: 14px;
+		line-height: 60px;
+	}
+	.fl_l li.active a{
+		background: #f35e5e;
+		color: #fff;
+	}
+	.fl_r{
+		float: right;
+		width: 960px;
+	}
+	.fl_r li{
+		margin-bottom: 30px;
+		background: #fff;
+		font-size: 50px;
+		line-height: 300px;
+		display: block;
+		text-align: center;
+	}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="E:\IDE\firsttext\src\main\resources\templates\echarts.min.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <script src="echarts.min.js"></script>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style_static_pages.css">
+    <title>result</title>
+</head>
+<body style="width: auto; margin: 0px auto; background-image: url(&quot;http://wx3.sinaimg.cn/large/ebc2bc14gy1fiq3h19z7vj21hc0rsabf.jpg&quot;); background-attachment: fixed; background-color: rgb(246, 244, 236);">
+
+
+	<meta charset="utf-8">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title></title>
+
+	</div>
+
+	<div style="width: 950px;height: 1000px;margin: 0 auto">
+		<div style="text-align: center;">
+			<img src="c5.png" style="padding-bottom: 40px;padding-top: 80px;">
+		</div>
+
+<div class="box">
+	<ul class="fl_l">
+		<li class="active"><a href="##">网站访问数据</a></li>
+		<li><a href="##">男女访问网站数据</a></li>
+		<li><a href="##">区间上网数据</a></li>
+		<li><a href="##">以10分钟区间上网数据</a></li>
+		<li><a href="##">指定区间上网数据</a></li>
+		<li><a href="##">5s内同时上网情况</a></li>
+	</ul>
+	<ul class="fl_r">
+		<li style="height: 600px;">
+			<div style="width: 1028px; height: 598px; float: left; background-color: rgb(246, 244, 236); border-style: solid; border-width: 1px; border-color: rgb(229, 229, 229);">
+
+				<div style="margin: 14px 14px 14px 14px;width: 602px;height: 172px;">
+					<div style="border-bottom:1px solid #cc0000;height: 35px;width: 602px">
+						<div style="border-bottom:5px solid #cc0000;height: 31px;width: 114px;float: left;">
+
+						</div>
+
+					</div>
+                    <div style="width: 500px;height: 300px;margin: 0 auto ;float:right;" >
+						  <div id="echarts3" style="width: 500px; height: 300px;margin: 120px 140px;"></div>
+
+					</div>
+				</div>
+				</div>
+
+
+
+		</li>
+
+		<ul class="fl_r">
+		<li style="height: 600px;">
+			<div style="width: 1028px; height: 598px; float: left; background-color: rgb(246, 244, 236); border-style: solid; border-width: 1px; border-color: rgb(229, 229, 229);">
+
+				<div style="margin: 14px 14px 14px 14px;width: 602px;height: 172px;">
+					<div style="border-bottom:1px solid #cc0000;height: 35px;width: 602px">
+						<div style="border-bottom:5px solid #cc0000;height: 31px;width: 114px;float: left;">
+
+						</div>
+
+					</div>
+                    <div style="width: 500px;height: 700px;margin: 0 auto ;float:right;" >
+						  <div id="echarts2" style="width: 500px; height: 300px;margin:  120px 140px;"></div>
+
+					</div>
+				</div>
+				</div>
+
+
+
+		</li>
+		<li style="height: 600px;">
+			<div style="width: 1028px; height: 598px; float: left; background-color: rgb(246, 244, 236); border-style: solid; border-width: 1px; border-color: rgb(229, 229, 229);">
+
+				<div style="margin: 14px 14px 14px 14px;width: 602px;height: 172px;">
+					<div style="border-bottom:1px solid #cc0000;height: 35px;width: 602px">
+						<div style="border-bottom:5px solid #cc0000;height: 31px;width: 114px;float: left;">
+
+						</div>
+
+					</div>
+                    <div style="width: 500px;height: 300px;margin: 0 auto ;float:right;" >
+						<div style="width: 500px;height: 700px;margin: 0 auto ;float:right;" >
+						  <div id="echarts4" style="width: 500px; height: 300px;margin:  120px 140px;"></div>
+
+					</div>
+                        </div>
+				</div>
+				</div>
+
+		</li>
+		<li style="height: 600px;">
+			<div style="width: 1028px; height: 598px; float: left; background-color: rgb(246, 244, 236); border-style: solid; border-width: 1px; border-color: rgb(229, 229, 229);">
+
+				<div style="margin: 14px 14px 14px 14px;width: 602px;height: 172px;">
+					<div style="border-bottom:1px solid #cc0000;height: 35px;width: 602px">
+						<div style="border-bottom:5px solid #cc0000;height: 31px;width: 114px;float: left;">
+
+						</div>
+
+					</div>
+                    <div style="width: 500px;height: 300px;margin: 0 auto ;float:right;" >
+						<div id="echarts1" style="width: 500px; height: 300px;margin:  120px 140px;">
+
+						</div>
+
+						</h1>
+                        </div>
+				</div>
+				</div>
+
+
+		</li>
+		<li style="height: 600px;">
+			<div style="width: 1028px; height: 598px; float: left; background-color: rgb(246, 244, 236); border-style: solid; border-width: 1px; border-color: rgb(229, 229, 229);">
+
+				<div style="margin: 14px 14px 14px 14px;width: 602px;height: 172px;">
+					<div style="border-bottom:1px solid #cc0000;height: 35px;width: 602px">
+						<div style="border-bottom:5px solid #cc0000;height: 31px;width: 114px;float: left;">
+
+						</div>
+
+					</div>
+                    <div style="width: 500px;height: 300px;margin: 0 auto ;float:right;" >
+						<h1 style="font-size: 15px;color: #cc0000;">
+						内容4
+						</h1>
+                        </div>
+				</div>
+				</div>
+
+
+		</li>
+
+		<li style="height: 600px;">
+			<div style="width: 1028px; height: 598px; float: left; background-color: rgb(246, 244, 236); border-style: solid; border-width: 1px; border-color: rgb(229, 229, 229);">
+
+				<div style="margin: 14px 14px 14px 14px;width: 602px;height: 172px;">
+					<div style="border-bottom:1px solid #cc0000;height: 35px;width: 602px">
+						<div style="border-bottom:5px solid #cc0000;height: 31px;width: 114px;float: left;">
+
+						</div>
+
+					</div>
+                    <div style="width: 500px;height: 300px;margin: 0 auto ;float:right;" >
+						<h1 style="font-size: 15px;color: #cc0000;">
+						内容5
+						</h1>
+                        </div>
+				</div>
+				</div>
+
+
+		</li>
+	</ul>
+	<div style="clear: both;"></div>
+</div>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//设置标杆
+		var _line=parseInt($(window).height()/3);
+		$(window).scroll(function(){
+			//滚动730px，左侧导航固定定位
+			if ($(window).scrollTop()>730) {
+				$('.fl_l').css({'position':'fixed','top':10})
+			}else{
+				$('.fl_l').css({'position':'','top':''})
+			};
+			$('.fl_l li').eq(0).addClass('active');
+			//滚动到标杆位置,左侧导航加active
+			$('.fl_r li').each(function(){
+				var _target=parseInt($(this).offset().top-$(window).scrollTop()-_line);
+				var _i=$(this).index();
+				if (_target<=0) {
+					$('.fl_l li').removeClass('active');
+					$('.fl_l li').eq(_i).addClass('active');
+				}
+				//如果到达页面底部，给左侧导航最后一个加active
+
+			});
+		});
+		$('.fl_l li').click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+			var _i=$(this).index();
+			 $('body, html').animate({scrollTop:$('.fl_r li').eq(_i).offset().top-_line},500);
+		});
+	});
+</script>
+<div style="text-align:center;">
+</div>
+	</div>
+
+	<script type="text/javascript">
+
+	</script>
+
+<script type="text/javascript"></script></body>
+<!-- 访问次数最多的网站-->
+<script type="text/javascript">
+    var dom = document.getElementById("echarts1");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    option = {
+        backgroundColor: 'lightblue',
+
+        title: {
+            text: '访问次数最多的网站',
+            left: 'center',
+            top: 20,
+            textStyle: {
+                color: '#8B8989'
+            }
+        },
+
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+
+        visualMap: {
+            show: false,
+            min: 80,
+            max: 600,
+            inRange: {
+                colorLightness: [0, 1]
+            }
+        },
+        series : [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius : '55%',
+                center: ['50%', '50%'],
+                data:[
+                    {value:335, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:274, name:'联盟广告'},
+                    {value:235, name:'视频广告'},
+                    {value:400, name:'搜索引擎'}
+                ].sort(function (a, b) { return a.value - b.value; }),
+                roseType: 'radius',
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: '#A1A1A1'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        lineStyle: {
+                            color: 'black'
+                        },
+                        smooth: 0.2,
+                        length: 10,
+                        length2: 20
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#8DB6CD',
+                        shadowBlur: 200,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                },
+
+                animationType: 'scale',
+                animationEasing: 'elasticOut',
+                animationDelay: function (idx) {
+                    return Math.random() * 200;
+                }
+            }
+        ]
+    };;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+
+<!-- 男 女生各访问次数最多的网站-->
+<script type="text/javascript">
+    var dom = document.getElementById("echarts2");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    option = {
+        title : {
+            text: '男生 女生访问次数较多的网站',
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['女生访问次数','男生访问次数']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                dataView : {show: true, readOnly: false},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'女生访问次数',
+                type:'bar',
+                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 132.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+            },
+            {
+                name:'男生访问次数',
+                type:'bar',
+                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint : {
+                    data : [
+                        {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                        {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                    ]
+                },
+            }
+        ]
+    };
+    ;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+
+<!-- 上网次数较多的学生-->
+<script type="text/javascript">
+    var dom = document.getElementById("echarts3");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    app.title = '极坐标系下的堆叠柱状图';
+
+    var data = [
+        [0,1800],
+        [0,1325],
+        [0, 1500],
+        [0, 1600],
+        [0, 4000],
+        [0, 4000],
+        [0,3133.33],
+        [0,3100],
+        [0, 2750],
+        [0,2500],
+        [0,2433.33],
+        [0,2375],
+        [0,2150],
+        [0,2100],
+        [0,2057.14],
+        [0,2037.5],
+        [0,1905.85],
+        [0,1775],
+        [0,1650]
+    ];
+    var cities = ['北京', '上海', '深圳', '广州','杭州', '南京', '福州',  '郑州', '武汉', '成都']
+    var barHeight = 50;
+
+    option = {
+        title: {
+            text: '上网次数排名TOP10',
+        },
+        legend: {
+            show: true,
+            data: ['上网次数']
+        },
+        grid: {
+            top: 100
+        },
+        angleAxis: {
+            type: 'category',
+            data: cities
+        },
+        tooltip: {
+            show: true,
+            formatter: function (params) {
+                var id = params.dataIndex;
+                return cities[id] +'<br>上网次数：' + data[id][1];
+            }
+        },
+        radiusAxis: {
+        },
+        polar: {
+        },
+        series: [{
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    color: 'transparent'
+                }
+            },
+            data: data.map(function (d) {
+                return d[0];
+            }),
+            coordinateSystem: 'polar',
+            stack: '最大最小值',
+            silent: true
+        }, {
+            type: 'bar',
+            data: data.map(function (d) {
+                return d[1] - d[0];
+            }),
+            coordinateSystem: 'polar',
+            name: '价格范围',
+            stack: '最大最小值'
+        }, {
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    color: 'transparent'
+                }
+            },
+            data: data.map(function (d) {
+                return d[2] - barHeight;
+            }),
+            coordinateSystem: 'polar',
+            stack: '均值',
+            silent: true,
+            z: 10
+        }, {
+            type: 'bar',
+            data: data.map(function (d) {
+                return barHeight * 2
+            }),
+            coordinateSystem: 'polar',
+            name: '均值',
+            stack: '均值',
+            barGap: '-100%',
+            z: 10
+        }],
+        legend: {
+            show: true,
+            data: ['A', 'B', 'C']
+        }
+    };
+    ;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+
+<!-- 以10分钟为区间，上网次数最多的时间区间-->
+<script type="text/javascript">
+
+    var dom = document.getElementById("echarts4");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    option = {
+        title : {
+            text: '雨量流量关系图',
+            x: 'center',
+            align: 'right'
+        },
+        grid: {
+            bottom: 80
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                animation: false,
+                label: {
+                    backgroundColor: '#505765'
+                }
+            }
+        },
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 65,
+                end: 85
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 65,
+                end: 85
+            }
+        ],
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                axisLine: {onZero: false},
+                data : [
+                    '0:00','0:01','0:20','0:30','0:40','0:50:',
+                    '1:00','1:10','1:20','1:30','1:40','1:50:',
+
+                ].map(function (str) {
+                    return str.replace(' ', '\n')
+                })
+            }
+        ],
+        yAxis: [
+            {
+                name: '次数',
+                type: 'value',
+                max: 500
+            },
+        ],
+        series: [
+            {
+                name:'流量',
+                type:'line',
+                animation: false,
+                areaStyle: {
+                },
+                lineStyle: {
+                    width: 1
+                },
+
+                data:[
+                    133,246,126,345,95,94,94,94,94,94,94,94,94,94,4,94,94,4
+                    ]
+            },
+
+        ]
+    };
+    ;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+
+<!-- 以10分钟为区间，上网次数最多的时间区间-->
+</html>

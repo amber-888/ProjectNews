@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="E:\IDE\firsttext\src\main\resources\templates\echarts.min.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <script src="echarts.min.js"></script>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style_static_pages.css">
+    <style>
+        body{text-align:center;margin:0;padding:0;background-color:lightblue;font-color:black;}
+
+        .logo{width:100%;text-align:center;margin-top:30px}
+        nav ul{margin-top:30px;margin-left:100px;position:absolute;width:1000px;}
+        nav li{float:left;;margin-left:100px;text-align:center;list-style:none}
+        a{color:black;text-decoration:none;font-size:15px;}
+        a:hover{border-bottom:2px solid red;padding-bottom:5px;text-decoration:none;font-size:15px;}
+        .tt{text-align:center;color:black;font-size:30px;}
+        .方形框{position:relative;margin:60px 100px 60px 100px;height:520px;border:2px solid #97a58c;}
+        .title{position:absolute;left:10%;top:-1em;line-height:2em;padding:0 0.5em;font-size:35px;color:back;background-color:#E5E5E5;}
+        .方形框 img{width:350px;height:200px;margin:35px 10px 15px 50px;float:left;}
+        .方形框 p{line-height:30px;}
+        .内容{position:relative;margin:40px 50px 60px 50px;height:420px;border:2px solid yellow;}
+        #方形框2{position:relative;margin:60px 100px 60px 100px;height:520px;border:2px solid #efe7f8;}
+        #title2{position:absolute;left:10%;top:-1em;line-height:2em;padding:0 0.5em;font-size:35px;color:back;background-color:#e0d8d8;}
+        #方形框3{position:relative;margin:60px 100px 60px 100px;height:4920px;border:2px solid #faead5;}
+        #title3{position:absolute;left:10%;top:-1em;line-height:2em;padding:0 0.5em;font-size:35px;color:back;background-color:#e1e6e0;}
+        #表头{font-size:30px;color:#7b7381;text-align:center;}
+        .o{font-size:30px;color:#7b7381;text-align:center;}
+    </style>
+    <meta charset="UTF-8">
+    <title>测试</title>
+</head>
+<body>
+<body>
+<div class="logo">
+    <img src="./psb1.png" style="height:200px;width:200px">
+</div>
+<div class="item active">
+    <div class="tt">欢迎来到模拟学生数据网</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="box col-lg-2 col-lg-offset-2 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <header>
+                <img src="./psb2.png" alt="">
+            </header>
+            <p></p>
+        </div>
+
+        <div class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+            <header>
+                <img src="./psb3.png" alt="">
+            </header>
+        </div>
+
+        <div class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <header>
+                <img src="./psb4.png" alt="">
+            </header>
+        </div>
+
+        <div class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+            <header>
+                <img src="./psb5.png" alt="">
+            </header>
+        </div>
+    </div>
+</div>
+<section id="信息初始化页面">
+    <h1> </h1>
+
+    <div class="方形框">
+        <span class="title">信息录入栏</span>
+        <div class="内容">
+            <p>
+            </p>
+        </div>
+    </div>
+
+    <div id="方形框2">
+        <span id="title2">状态栏</span>
+        <div class="内容">
+            <body >
+            <table border="1" align="center">
+                <caption id="表头">查询历史记录</caption>
+                <tr>
+                    <td> </td>
+                    <td>访问最多的网站
+                    </td>
+                    <td>男生</td>
+                    <td>女生</td>
+                    <td>次数最多的学生</td>
+                    <td>次数最多的男生</td>
+                    <td>次数最多的女生</td>
+                </tr>
+                <tr>
+                    <td>本次查询结果：</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>时间1：</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>时间2：</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            </body>
+
+        </div>
+    </div>
+
+    <h1> </h1>
+
+    <div id="方形框3">
+        <span id="title3">结果展示栏</span>
+        <div class="内容">
+            <p class="o">
+                <iframe src="1.html" frameborder="0" width="300" scrolling="No" height="200" leftmargin="0" topmargin="0"></iframe>
+                <a href="1.html">点击</a>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">
+            <div id="echarts2" style="width: 750px; height: 350px;margin: 20px auto;"></div>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">  女生访问最多的网站！！！ <br>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">  指定时间区间内上网次数最多的学生姓名！！！ <br>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">  指定时间区间内上网次数最多的男生学生姓名！！！ <br>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">  指定时间区间内上网次数最多的女生学生姓名！！！ <br>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">  以10分钟为区间，上网次数最多的时间区间！！！ <br>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">  指定时间段，查看上网次数最多的学生学号！！！ <br>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">  同时[5秒以内]同时上同一个网站的男生列表！！！ <br>
+            </p>
+        </div>
+        <div class="内容">
+            <p class="o">  同时[5秒以内]同时上同一个网站的女生列表！！！ <br>
+            </p>
+        </div>
+    </div>
+</section>
+</body>
+
+
+</html>

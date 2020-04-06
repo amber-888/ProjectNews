@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+</head>
+<body style="width: auto; margin: 0px auto; background-image: url(http://wx3.sinaimg.cn/large/ebc2bc14gy1fiq3h19z7vj21hc0rsabf.jpg;); background-attachment: fixed; background-color: rgb(246, 244, 236);">
+
+
+	<meta charset="utf-8">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title></title>
+	<div style="width:  1261px;height: 80px;background-color:#000000 ;margin: 0px auto;">
+		<table style="float: right;font-size: 15px;color:#aab1b7 ;height: 80px; ">
+			<tbody><tr style="text-align: center;">
+				<td id="home" style="width: 100px;"><a th:href="@{/start}" class="white1">首页</a></td>
+				<td id="brand" style="width: 100px;"><a th:href="@{/infor}" class="white1">信息录入栏</a></td>
+				<td id="product" style="width: 100px;"><a th:href="@{/result}" class="white1">结果展示栏</a></td>
+				<td id="shops" style="width: 100px;"><a th:href="@{/history}" class="white1">历史记录栏</a></td>
+			</tr>
+			</tbody></table>
+	</div>
+	</div>
+	<div style="width: 950px;height: 1000px;margin: 0 auto">
+		<div style="text-align: center;">
+			<img src="history/c4.png" style="padding-bottom: 40px;padding-top: 60px;">
+		</div>
+
+
+
+		<div style="width: 1028px; height: 598px; float: left; background-color: rgb(246, 244, 236); border-style: solid; border-width: 1px; border-color: rgb(229, 229, 229);">
+				<div style="margin: 14px 14px 14px 14px;width: 802px;height: 172px;">
+					<div style="border-bottom:1px solid #cc0000;height: 35px;width: 602px">
+						<div style="border-bottom:5px solid #cc0000;height: 31px;width: 114px;float: left;">
+						<h1 style="font-size: 15px;color: #cc0000;">
+						历史记录
+						</h1>
+						</div>
+
+					</div>
+
+<style type="text/css">
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 10px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+	size:20px;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 12px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+<!-- Table goes in the document BODY -->
+<table class="gridtable">
+<tr>
+	<th>id</th></th><th>姓名</th><th>学号</th><th>性别</th><th>条数</th><th>网站</th><th>时间段</th><th>管理</th><th>状态</th>
+</tr>
+<tr th:each="rules : ${rule}">
+	<th scope="row" th:text="${rules.id}">1</th>
+	<td th:text="${rules.name}">neo</td>
+	<td th:text="${rules.studentNum}">Otto</td>
+	<td th:text="${rules.sex}">女</td>
+	<td th:text="${rules.number}">100</td>
+	<td th:text="${rules.webName}">百度</td>
+	<td th:text="${rules.timeslice}">8：00~10:00</td>
+	<td><a th:href="@{/delete(id=${rules.id})}">删除</a></td>
+	<td>完成</td>
+</tr>
+</table>
+                        </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+	</script>
+
+<script type="text/javascript"></script></body>
+
+</html>

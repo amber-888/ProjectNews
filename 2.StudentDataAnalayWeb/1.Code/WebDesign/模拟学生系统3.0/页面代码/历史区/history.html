@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    (function agent() {
+    let isUnlockingCached = false
+    const isUnlocking = () => isUnlockingCached
+    document.addEventListener('allow_copy', event => {
+      const { unlock } = event.detail
+      isUnlockingCached = unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = e => {
+      if (isUnlocking()) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach(evt => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()
+
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+</head>
+<body style="width: auto; margin: 0px auto; background-image: url(&quot;http://wx3.sinaimg.cn/large/ebc2bc14gy1fiq3h19z7vj21hc0rsabf.jpg&quot;); background-attachment: fixed; background-color: rgb(246, 244, 236);">
+
+
+	<meta charset="utf-8">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<title></title>
+
+	</div>
+	<div style="width: 950px;height: 1000px;margin: 0 auto">
+		<div style="text-align: center;">
+			<img src="c4.png" style="padding-bottom: 40px;padding-top: 80px;">
+		</div>
+
+
+
+		<div style="width: 1028px; height: 598px; float: left; background-color: rgb(246, 244, 236); border-style: solid; border-width: 1px; border-color: rgb(229, 229, 229);">
+				<div style="margin: 14px 14px 14px 14px;width: 802px;height: 172px;">
+					<div style="border-bottom:1px solid #cc0000;height: 35px;width: 602px">
+						<div style="border-bottom:5px solid #cc0000;height: 31px;width: 114px;float: left;">
+						<h1 style="font-size: 15px;color: #cc0000;">
+						历史记录
+						</h1>
+						</div>
+
+					</div>
+
+<style type="text/css">
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 10px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 12px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+<!-- Table goes in the document BODY -->
+<table class="gridtable">
+<tr>
+	<th>查询时间记录</th><th>访问最多的网站</th><th>男主访问情况</th><th>女生访问情况</th><th>访问网站次数对的的学生学号</th><th>男主top</th><th>女生top</th>
+</tr>
+<tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+<tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+    <tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+    <tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+    <tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+    <tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+    <tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+    <tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+    <tr>
+	<td>*****</td><td>网站名*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td>
+</tr>
+</table>
+
+
+
+                        </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+
+	</script>
+
+<script type="text/javascript"></script></body>
+
+</html>
